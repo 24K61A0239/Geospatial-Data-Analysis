@@ -1,0 +1,47 @@
+import pandas as pd
+import folium
+import os
+
+# Create output folder
+os.makedirs("output", exist_ok=True)
+
+# Load dataset
+df = pd.read_csv("locations.csv")
+
+print("Dataset Loaded Successfully")
+print(df.head())
+
+# Basic Statistics
+total_locations = len(df)
+avg_latitude = df["Latitude"].mean()
+avg_longitude = df["Longitude"].mean()
+
+# Create Map
+center_lat = df["Latitude"].mean()
+center_lon = df["Longitude"].mean()
+
+m = folium.Map(
+    location=[center_lat, center_lon],
+    zoom_start=5
+)
+
+# Add Markers
+for _, row in df.iterrows():
+    folium.Marker(
+        location=[row["Latitude"], row["Longitude"]],
+        popup=f"{row['City']} ({row['Visitors']})"
+    ).add_to(m)
+
+# Save Map
+m.save("output/location_map.html")
+
+# Generate Report
+with open("output/summary_report.txt", "w") as file:
+    file.write("GEOSPATIAL DATA ANALYSIS REPORT\n")
+    file.write("===============================\n\n")
+    file.write(f"Total Locations: {total_locations}\n")
+    file.write(f"Average Latitude: {avg_latitude:.4f}\n")
+    file.write(f"Average Longitude: {avg_longitude:.4f}\n")
+
+print("\nAnalysis Completed Successfully!")
+print("Map saved to output/location_map.html")
