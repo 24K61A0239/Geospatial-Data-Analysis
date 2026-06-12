@@ -1,0 +1,75 @@
+# Geospatial Data Analysis Using Python
+
+## Overview
+
+This project performs geospatial data analysis and visualizes geographic locations on an interactive map.
+
+It uses latitude and longitude data to generate location markers and provide geographical insights.
+
+## Features
+
+- Load geospatial datasets
+- Analyze location information
+- Calculate geographical statistics
+- Generate interactive maps
+- Create summary reports
+
+## Technologies Used
+
+- Python
+- Pandas
+- Folium
+
+## Project Workflow
+
+1. Read geospatial dataset
+2. Calculate location statistics
+3. Create interactive map
+4. Add markers for locations
+5. Generate analysis report
+6. Export results
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+## Run the Project
+
+```bash
+python geospatial_analysis.py
+```
+
+## Output Files
+
+### Interactive Map
+
+- `output/location_map.html`
+
+### Summary Report
+
+- `output/summary_report.txt`
+
+## Sample Analysis
+
+- Total Locations
+- Average Coordinates
+- Location Distribution
+- Visitor Counts
+
+## Future Enhancements
+
+- Heat Maps
+- Route Optimization
+- GPS Tracking Analysis
+- Real-Time Location Monitoring
+- GIS Data Integration
+
+## Screenshots
+
+Add screenshots of the generated map here after running the project.
+
+## Author
+
+Your Name
